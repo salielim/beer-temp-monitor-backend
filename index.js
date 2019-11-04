@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 exports.temp = (req, res) => {
-  const { queueUrl } = req.body;
+  const { id } = req.body;
 
   res.set('Access-Control-Allow-Origin', '*');
 
@@ -17,7 +17,7 @@ exports.temp = (req, res) => {
       // await call api
       try {
         const temp = await axios.get(
-          'https://temperature-sensor-service.herokuapp.com/sensor/1',
+          `https://temperature-sensor-service.herokuapp.com/sensor/${id}`,
         );
         console.log('temp ', temp.data);
         await res.send({
