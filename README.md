@@ -51,11 +51,11 @@ $ npm install netlify-cli -g
 $ netlify deploy
 ```
 
-Also this Git project is
+Also this Git project has been setup with Continuous Deployment from this Git repository.
 
 # Questions I would ask
 
-In a real-life scenario, you would ask questions to clarify any doubts but for this challenge, document the questions you would ask and provide your own answers in the readme f​ile.
+In a real-life scenario, you would ask questions to clarify any doubts but for this challenge, document the questions you would ask and provide your own answers in the readme file.
 
 Q1. What does the existing application architecture look like and where is the data coming from https://temperature-sensor-service.herokuapp.com/sensor/1?
 
