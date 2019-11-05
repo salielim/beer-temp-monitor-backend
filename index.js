@@ -15,7 +15,7 @@ exports.temp = (req, res) => {
       try {
         const data = [];
         let i = 0;
-        for (i = 0; i < 6; i++) {
+        for (i = 1; i < 7; i++) {
           const temp = await axios.get(
             `https://temperature-sensor-service.herokuapp.com/sensor/${i}`,
           );
