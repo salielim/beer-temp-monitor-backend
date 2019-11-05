@@ -2,8 +2,6 @@
 const axios = require('axios');
 
 exports.temp = (req, res) => {
-  const { id } = req.body;
-
   res.set('Access-Control-Allow-Origin', '*');
 
   if (req.method === 'OPTIONS') {
@@ -14,18 +12,21 @@ exports.temp = (req, res) => {
     res.status(204).send('');
   } else {
     (async () => {
-      // await call api
       try {
-        const temp = await axios.get(
-          `https://temperature-sensor-service.herokuapp.com/sensor/${id}`,
-        );
-        console.log('temp ', temp.data);
+        const data = [];
+        let i = 0;
+        for (i = 0; i < 6; i++) {
+          const temp = await axios.get(
+            `https://temperature-sensor-service.herokuapp.com/sensor/${i}`,
+          );
+          data.push(temp.data);
+        }
         await res.send({
           status: {
             code: 200,
             message: 'Success',
           },
-          data: temp.data,
+          data,
         });
       } catch (error) {
         console.error(error);
